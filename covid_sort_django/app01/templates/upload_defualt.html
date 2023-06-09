@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>新冠肺炎胸透识别预测</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons-网站图标 -->
+    <link href="../static/assets/img/lung_(1).ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Mamba - v2.0.1
+    * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+
+<body>
+
+<!-- ======= Header  导航栏======= -->
+<header id="header">
+    <div class="container">
+        <div class="logo float-left">
+            <h1 class="text-light"><a href="/index"><span>Medical image recognition</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li><a href="/index">首页</a></li>
+                <li><a href="/intro">功能介绍</a></li>
+                <li class="active"><a href="/upload">上传预测</a></li>
+                <li><a href="/data">数据集</a></li>
+                <li><a href="/index">团队成员</a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Main 内容 ======= -->
+<main id="main">
+
+    <section id="about" class="about">
+        <div class="section-title">
+            <h2>新冠肺炎胸透识别预测-本地上传</h2>
+            <p style="text-align:center;">支持用户本地上传图片,图片类型支持PNG、JPG、JPEG、BMP等</p>
+        </div>
+        <div class="container">
+
+            <div class="row no-gutters">
+                <div class="col-lg-6 video-box">
+                    <!--  默认图片展示   -->
+                    <img src="../static/assets/img/COVID(936)-default.png " class="img-fluid" alt="">
+                    {#上传图片#}
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="img">
+                        <br><br>
+                        <input type="submit" name="upload" value="上传并识别">
+                    </form>
+
+                    {% if messages %}
+                        <script>
+                            {% for msg in messages %}
+                                alert('{{ msg.message }}');
+                            {% endfor %}
+                        </script>
+                    {% endif %}
+
+
+                </div>
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                    <div class="section-title">
+                        <h2>预测结果</h2>
+                    </div>
+
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <!--  图片名称   -->
+                        <h4 class="title">图片名称: COVID(936)-default.png</h4>
+                    </div>
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <!--  预测类别   -->
+                        <h4 class="title">预测类别: {{ classes }}</h4>
+                    </div>
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <!--  置信度   -->
+                        <h4 class="title">预测准确率: {{ score }}</h4>
+
+                    </div>
+                </div>
+
+            </div>
+    </section><!-- End About Us Section -->
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer 页脚======= -->
+<footer id="footer">
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Mamba</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../static/assets/vendor/php-email-form/validate.js"></script>
+<script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+<script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+<script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+<script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../static/assets/vendor/aos/aos.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

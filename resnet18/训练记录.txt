@@ -1,0 +1,52 @@
+r18_1:
+    # 数据集相关
+    dataset_path = 'dataset/image'
+    resize_shape = 224
+    data_split_rate = 0.8
+
+    # 模型训练相关
+    start_epoch = 0
+    epoch = 5                   ###############
+    lr = 0.0001
+    batch_size = 128
+    model_file = 'model/r18_1.pth'
+
+
+r18_2:
+    # 数据集相关
+    dataset_path = 'dataset/image'
+    resize_shape = 224
+    data_split_rate = 0.8
+
+    # 模型训练相关
+    start_epoch = 0
+    epoch = 20                  ###############
+    lr = 0.0001
+    batch_size = 128
+    model_file = 'model/r18_2.pth'
+
+r18_3:
+    # 数据集相关
+    dataset_path = 'dataset/image'
+    resize_shape = 224
+    data_split_rate = 0.7       ################
+
+    # 模型训练相关
+    start_epoch = 0
+    epoch = 20
+    lr = 0.0001
+    batch_size = 128
+    model_file = 'model/r18_3.pth'
+
+r18_4:
+    # 数据集相关
+    dataset_path = 'dataset/image'
+    resize_shape = 224
+    data_split_rate = 0.8
+
+    # 模型训练相关
+    start_epoch = 0
+    epoch = 50
+    lr = 0.0001
+    batch_size = 128
+    model_file = 'model/r18_4.pth'
